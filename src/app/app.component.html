@@ -1,4 +1,4 @@
-
+<!--Header -->
 <div class="containter">
   <div class="row">
       <nav class="navbar navbar-default">
@@ -10,10 +10,11 @@
           </div>
         </nav>
   </div>
-  <div class="container">
+  <!--Body-->
+  <div class="container" >
       <div class="row">
+        <!--List of books-->
           <div class="col-xs-4 ">
-           
               <input [(ngModel)]="searchText" placeholder="search book" class="form-control">
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="New book" [(ngModel)]="newBook">
@@ -25,8 +26,9 @@
               <button type="button" class="list-group-item" *ngFor="let book  of books | filter : searchText;let i = index" (click)="onselectedBook(book,i)" >{{book}}</button>
             </div>
           </div>
+          <!--Calling Edit view on click-->
           <div class="col-xs-4">
-              <app-selected-book [book]="selectedBook" *ngIf="selectedBook" (returnEditedBook)="doSomething($event)"></app-selected-book>
+              <app-selected-book [book]="selectedBook" *ngIf="selectedBook" (returnEditedBook)="updateList($event)"></app-selected-book>
           </div>
         </div>
   </div>
