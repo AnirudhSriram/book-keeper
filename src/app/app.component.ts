@@ -27,8 +27,10 @@ export class AppComponent {
   }
   // Function that adds new book to the bookArray//
   onAddNew() {
-      this.books.push(this.newBook) ;
-      this.newBook = '' ;
+      if (this.newBook.length > 0) {
+        this.books.push(this.newBook) ;
+        this.newBook = '' ;
+      }
   }
 
 }
