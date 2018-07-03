@@ -1,0 +1,15 @@
+
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+      {{book}}
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-warning" (click)="beginEdit()" >Edit</button>
+        <button class="btn btn-success" (click) = "finishEdit()"*ngIf="show">Save</button>
+        <hr *ngIf="show">
+        <input type="text" class="form-control" *ngIf="show" placeholder="{{book}}" [(ngModel)] = "editedData" > 
+
+    </div>
+  </div>

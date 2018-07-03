@@ -1,0 +1,36 @@
+
+<div class="containter">
+  <div class="row">
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <p class="navbar-text">Library Management</p>
+
+            </div>
+          </div>
+        </nav>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-4 ">
+           
+              <input [(ngModel)]="searchText" placeholder="search book" class="form-control">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="New book" [(ngModel)]="newBook">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-block" type="button" (click)="onAddNew()">Add</button>
+                  </span>
+                </div>
+            <div class="list-group">
+              <button type="button" class="list-group-item" *ngFor="let book  of books | filter : searchText;let i = index" (click)="onselectedBook(book,i)" >{{book}}</button>
+            </div>
+          </div>
+          <div class="col-xs-4">
+              <app-selected-book [book]="selectedBook" *ngIf="selectedBook" (returnEditedBook)="doSomething($event)"></app-selected-book>
+          </div>
+        </div>
+  </div>
+  
+</div>
+
+
