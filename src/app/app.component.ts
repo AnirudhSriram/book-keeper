@@ -21,6 +21,7 @@ export class AppComponent {
 
   }
   doSomething(data) {
+    this.selectedBook = '';
      this.books[this.selectedBookIndex] = data ;
   }
   onAddNew() {
